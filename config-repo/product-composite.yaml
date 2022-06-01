@@ -1,0 +1,166 @@
+server:
+  port: 7000
+
+ribbon:
+  ServerListRefreshInterval: 5000
+  NFLoadBalancerPingInterval: 5
+
+spring:
+  cloud:
+    stream:
+      defaultBinder: rabbit
+      default:
+        contentType: application/json
+      bindings:
+        output-products:
+          destination: products
+          producer:
+            required-groups: auditGroup
+        output-recommendations:
+          destination: recommendations
+          producer:
+            required-groups: auditGroup
+        output-reviews:
+          destination: reviews
+          producer:
+            required-groups: auditGroup
+      kafka:
+        binder:
+          replication-factor: 1
+
+spring.security.oauth2.resourceserver.jwt.jwk-set-uri: http://${app.auth-server}:9999/.well-known/jwks.json
+
+app:
+  product-service:
+    timeoutSec: 2
+
+resilience4j.retry:
+  #  backends:
+  instances:
+    product:
+      maxRetryAttempts: 3
+      waitDuration: 1000
+      retryExceptions:
+        - org.springframework.web.reactive.function.client.WebClientResponseException$InternalServerError
+
+resilience4j.circuitbreaker:
+  #  backends:
+  instances:
+    product:
+      registerHealthIndicator: true
+      ringBufferSizeInClosedState: 5
+      failureRateThreshold: 50
+      waitInterval: 10000
+      ringBufferSizeInHalfOpenState: 3
+      automaticTransitionFromOpenToHalfOpenEnabled: true
+      ignoreExceptions:
+        - jp.vmware.sol.util.exceptions.InvalidInputException
+        - jp.vmware.sol.util.exceptions.NotFoundException
+
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+
+logging:
+  level:
+    root: INFO
+    jp.vmware.sol: DEBUG
+    org.springframework.web.server.adapter.HttpWebHandlerAdapter: TRACE
+
+api:
+  common:
+    version: 1.0.0
+    title: Sample API
+    description: Description of the API
+    termsOfServiceUrl: MINE TERMS OF SERVICE URL
+    license: License
+    licenseUrl: MY LICENSE URL
+    contact:
+      name: Contact
+      url: My URL
+      email: vmware@acme.local
+  product-composite:
+    create-composite-product:
+      description: 製品情報を作成する
+      notes: |
+        # 通常のレスポンス
+        ポストされた製品情報は分割され、product-info, recommendation, review エンティティとして個別に格納される
+
+        # エラーレスポンス
+        1. もしポストされた productId が既に存在する場合は<b>422 - Unprocessable Entity, "duplicate key" エラーもしくはメッセージ</b>が返される
+    get-composite-product:
+      description: 指定した製品id の複合ビューを返す
+      notes: |
+        # 通常のレスポンス
+        もし指定した製品idが見つかった場合、以下の情報を返す:
+        1. 製品の基本情報
+        1. レビュー
+        1. お薦め
+        1. サービスアドレス
+
+        # 以下のケースでは部分的か結果を返す（テスト用）
+
+        ## 製品id 113
+        200 - OK, お薦めは返信されない
+
+        ## 製品id 213
+        200 - OK, レビューは返信されない
+
+        ## 製品id 数字以外
+        400 - Bad Request, エラーが返される
+
+        ## 製品id 13
+        404 - Not Found, エラーが返される
+
+        ## 製品id 負数
+        422 - Unprocessable Entity, エラーが返される
+    delete-composite-product:
+      description: 製品情報を削除する
+      notes: |
+        # 通常のレスポンス
+        製品情報に関連する product-info, recommendation 及び review エンティティが削除される
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+
+server:
+  port: 8080
+
+---
+spring:
+  config:
+    activate:
+      on-profile: streaming_partitioned
+  cloud:
+    stream:
+      bindings:
+        output-products:
+          producer:
+            partition-key-expression: payload.key
+            partition-count: 2
+        output-recommendations:
+          producer:
+            partition-key-expression: payload.key
+            partition-count: 2
+        output-reviews:
+          producer:
+            partition-key-expression: payload.key
+            partition-count: 2
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kafka
+  cloud:
+    stream:
+      defaultBinder: kafka
+
+management:
+  health:
+    rabbit:
+      enabled: false

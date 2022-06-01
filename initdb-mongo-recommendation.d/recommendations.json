@@ -1,0 +1,191 @@
+[
+  {
+    "productId": 1001,
+    "recommendationId": 1,
+    "author": "山田太郎",
+    "rating": 5,
+    "content": "素晴らしい！"
+  },
+  {
+    "productId": 1001,
+    "recommendationId": 2,
+    "author": "山田花子",
+    "rating": 3,
+    "content": "まあまあ"
+  },
+  {
+    "productId": 1001,
+    "recommendationId": 3,
+    "author": "鈴木一郎",
+    "rating": 3,
+    "content": "まあまあ"
+  },
+  {
+    "productId": 1002,
+    "recommendationId": 1,
+    "author": "山田太郎",
+    "rating": 1,
+    "content": "つまんない"
+  },
+  {
+    "productId": 1002,
+    "recommendationId": 2,
+    "author": "山田花子",
+    "rating": 5,
+    "content": "最高！"
+  },
+  {
+    "productId": 1002,
+    "recommendationId": 3,
+    "author": "鈴木一郎",
+    "rating": 3,
+    "content": "まあまあ"
+  },
+  {
+    "productId": 1003,
+    "recommendationId": 1,
+    "author": "山田花子",
+    "rating": 5,
+    "content": "最高！"
+  },
+  {
+    "productId": 1004,
+    "recommendationId": 1,
+    "author": "山田太郎",
+    "rating": 1,
+    "content": "つまんない"
+  },
+  {
+    "productId": 1004,
+    "recommendationId": 2,
+    "author": "山田花子",
+    "rating": 5,
+    "content": "最高！"
+  },
+  {
+    "productId": 1004,
+    "recommendationId": 3,
+    "author": "鈴木一郎",
+    "rating": 3,
+    "content": "まあまあ"
+  },
+  {
+    "productId": 1005,
+    "recommendationId": 1,
+    "author": "鈴木一郎",
+    "rating": 3,
+    "content": "まあまあ"
+  },
+  {
+    "productId": 1006,
+    "recommendationId": 1,
+    "author": "山田太郎",
+    "rating": 1,
+    "content": "つまんない"
+  },
+  {
+    "productId": 1006,
+    "recommendationId": 2,
+    "author": "山田花子",
+    "rating": 5,
+    "content": "最高！"
+  },
+  {
+    "productId": 1007,
+    "recommendationId": 1,
+    "author": "山田太郎",
+    "rating": 4,
+    "content": "結構面白い"
+  },
+  {
+    "productId": 1008,
+    "recommendationId": 1,
+    "author": "山田太郎",
+    "rating": 1,
+    "content": "つまんない"
+  },
+  {
+    "productId": 1008,
+    "recommendationId": 2,
+    "author": "山田花子",
+    "rating": 5,
+    "content": "最高！"
+  },
+  {
+    "productId": 1009,
+    "recommendationId": 1,
+    "author": "山田花子",
+    "rating": 2,
+    "content": "いまいち"
+  },
+  {
+    "productId": 1009,
+    "recommendationId": 2,
+    "author": "鈴木一郎",
+    "rating": 3,
+    "content": "まあまあ"
+  },
+  {
+    "productId": 1010,
+    "recommendationId": 1,
+    "author": "山田太郎",
+    "rating": 5,
+    "content": "最高！"
+  },
+  {
+    "productId": 1011,
+    "recommendationId": 1,
+    "author": "山田太郎",
+    "rating": 1,
+    "content": "つまんない"
+  },
+  {
+    "productId": 1011,
+    "recommendationId": 2,
+    "author": "山田花子",
+    "rating": 5,
+    "content": "最高！"
+  },
+  {
+    "productId": 1011,
+    "recommendationId": 3,
+    "author": "鈴木一郎",
+    "rating": 3,
+    "content": "まあまあ"
+  },
+  {
+    "productId": 1012,
+    "recommendationId": 1,
+    "author": "山田花子",
+    "rating": 5,
+    "content": "最高！"
+  },
+  {
+    "productId": 1013,
+    "recommendationId": 1,
+    "author": "山田太郎",
+    "rating": 5,
+    "content": "最高！"
+  },
+  {
+    "productId": 1013,
+    "recommendationId": 2,
+    "author": "山田花子",
+    "rating": 5,
+    "content": "最高！"
+  },
+  {
+    "productId": 1013,
+    "recommendationId": 3,
+    "author": "鈴木一郎",
+    "rating": 5,
+    "content": "最高！"
+  },
+  {
+    "productId": 1014,
+    "recommendationId": 1,
+    "author": "鈴木一郎",
+    "rating": 3,
+    "content": "まあまあ"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "productId": 1001,
+    "name": "風の歌を聴け",
+    "weight": 50
+  },
+  {
+    "productId": 1002,
+    "name": "1973年のピンボール",
+    "weight": 10
+  },
+  {
+    "productId": 1003,
+    "name": "羊をめぐる冒険",
+    "weight": 90
+  },
+  {
+    "productId": 1004,
+    "name": "世界の終わりとハードボイルド・ワンダーランド",
+    "weight": 80
+  },
+  {
+    "productId": 1005,
+    "name": "ノルウェイの森",
+    "weight": 100
+  },
+  {
+    "productId": 1006,
+    "name": "ダンス・ダンス・ダンス",
+    "weight": 95
+  },
+  {
+    "productId": 1007,
+    "name": "国境の南、太陽の西",
+    "weight": 30
+  },
+  {
+    "productId": 1008,
+    "name": "ねじまき鳥クロニクル",
+    "weight": 82
+  },
+  {
+    "productId": 1009,
+    "name": "スプートニクの恋人",
+    "weight": 30
+  },
+  {
+    "productId": 1010,
+    "name": "海辺のカフカ",
+    "weight": 92
+  },
+  {
+    "productId": 1011,
+    "name": "アフターダーク",
+    "weight": 15
+  },
+  {
+    "productId": 1012,
+    "name": "1Q84",
+    "weight": 80
+  },
+  {
+    "productId": 1013,
+    "name": "色彩を持たない多崎つくると、彼の巡礼の年",
+    "weight": 65
+  },
+  {
+    "productId": 1014,
+    "name": "騎士団長殺し",
+    "weight": 55
+  }
+]
